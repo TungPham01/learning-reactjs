@@ -1,0 +1,39 @@
+.list-todo-container {
+    .mr-10 {
+        margin-right: 10px;
+    }
+    
+    .mb-10 {
+        margin-bottom: 10px;
+    }
+    
+    .list-todo-content { 
+        width: 300px;
+        margin: 0 auto;
+    
+        .todo-child{ 
+            &:first-child {
+                border-top: 1px solid white;
+            }
+            .edit { 
+                background-color:yellow;
+            }
+            .delete { 
+                background-color:red;
+            }
+            text-align: left;
+        }
+    }
+    
+    .add-todo {
+        .add { 
+            background-color:green;
+        }
+    }
+    
+    button {
+        cursor: pointer;
+    }
+}
+
+
