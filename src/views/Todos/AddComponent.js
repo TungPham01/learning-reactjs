@@ -1,5 +1,6 @@
 import React from 'react';
 import './ListTodo.scss'
+import { toast } from 'react-toastify';
 
 class AddComponent extends React.Component {
     state = {
@@ -14,7 +15,8 @@ class AddComponent extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault()
         if(!this.state.title) {
-            return alert('Vui lòng nhập đầy đủ thông tin!')
+            toast.error('Thêm thất bại, thiếu thông tin!')
+            return;
         }
         this.props.addTodo({
             id: Math.floor(Math.random() * 100), 
