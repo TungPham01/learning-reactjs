@@ -6,11 +6,6 @@ const Detail = () => {
   let params = useParams();
 
       let id = params.id;
-//       let res =  axios.get(`https://reqres.in/api/users/${id}`).then((res) => {
-//         return res
-//       });
-  
-//   console.log(res)
 
     let user = axios.get(`https://reqres.in/api/users/${params.id}`).then(result => result.data)
 
@@ -33,9 +28,8 @@ const Detail = () => {
 
   return (
     <>
-    sss
-      {/* <div>hello detail user id is {user.id}</div>
-      <div>Email: {user.email}</div>
+      <div>hello detail user id is: {id}</div>
+      {/* <div>Email: {user.email}</div>
       <div>Name: {`${user.first_name}${user.last_name}`}</div>
       <div>
         Avatar:

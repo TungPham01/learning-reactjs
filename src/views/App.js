@@ -5,26 +5,18 @@ import ListTodo from "./Todos/ListTodo";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Nav from "./Nav/Nav";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Home/Home";
 import ListUser from "./Users/ListUser";
 import Detail from "./Users/Detail";
+import { Outlet } from 'react-router-dom';
 
 function App() {
   return (
-    <BrowserRouter>
       <div className="App">
         <header className="App-header">
           <Nav />
           <img src={logo} className="App-logo" alt="logo" />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/todos" element={<ListTodo />} />
-            <Route path="/example" element={<MyComponent />} />
-
-            <Route path="/users" element={<ListUser />} />
-            <Route path="/users/:id" element={<Detail />} />
-          </Routes>
+          <Outlet />
         </header>
         <ToastContainer
           position="top-right"
@@ -38,7 +30,7 @@ function App() {
           pauseOnHover
         />
       </div>
-    </BrowserRouter>
+    
   );
 }
 
