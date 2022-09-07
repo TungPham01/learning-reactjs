@@ -1,0 +1,13 @@
+.title {
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+.content-list {
+  margin: 0 auto;
+  width: 500px;
+  font-size: 20px;
+  .child {
+    border: 1px solid;
+    padding: 10px 0;
+  }
+}
