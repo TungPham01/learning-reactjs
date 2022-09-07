@@ -5,26 +5,10 @@ import axios from "axios";
 const Detail = () => {
   let params = useParams();
 
-      let id = params.id;
+  let id = params.id;
 
-    let user = axios.get(`https://reqres.in/api/users/${params.id}`).then(result => result.data)
-
-    let fetchTodo = async () => {
-        try {
-            const res = await axios.get(`https://reqres.in/api/users/${id}`);
-            return res;
-        } catch (error) {
-            console.log(error);
-        }
-    };
-
-    // Promise.fetchTodo().then(function(value) {
-    //     console.log(value);
-    // }
-
-    console.log(fetchTodo())
-    // const res = await user();
-    // console.log(res)
+  // không được giá trị khi gọi axios, error promise <pending>
+  // let user = axios.get(`https://reqres.in/api/users/${params.id}`).then(result => result.data)
 
   return (
     <>
