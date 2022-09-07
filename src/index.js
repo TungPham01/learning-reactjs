@@ -9,21 +9,27 @@ import ListUser from "./views/Users/ListUser";
 import Detail from "./views/Users/Detail";
 import MyComponent from "./views/Example/MyComponent";
 import ListTodo from "./views/Todos/ListTodo";
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import rootReducer from './store/reducers/rootReducer'
 
+const reduxStore = createStore(rootReducer);
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />} >
-          <Route index element={<Home />} />
-          <Route path="/todos" element={<ListTodo />} />
-          <Route path="/example" element={<MyComponent />} />
+    <Provider store={reduxStore}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />} >
+            <Route index element={<Home />} />
+            <Route path="/todos" element={<ListTodo />} />
+            <Route path="/example" element={<MyComponent />} />
 
-          <Route path="/users" element={<ListUser />} />
-          <Route path="/users/:id" element={<Detail />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+            <Route path="/users" element={<ListUser />} />
+            <Route path="/users/:id" element={<Detail />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
